@@ -34,3 +34,10 @@ function initPageLoadAnimation() {
         document.body.style.opacity = '1';
     }, 100);
 }
+document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = this.querySelector('input[type="email"]').value;
+    // Here you would typically send the email to your backend service
+    alert('Thank you for subscribing! We\'ll be in touch soon.');
+    this.reset();
+});
