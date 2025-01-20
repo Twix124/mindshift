@@ -216,3 +216,47 @@ h1 {
         box-shadow: 0 0 40px var(--secondary-color);
     }
 }
+.newsletter-section {
+    background: rgba(212, 165, 255, 0.05);
+    border-radius: 15px;
+    padding: 40px;
+    margin: 60px auto;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(155, 77, 202, 0.2);
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.newsletter-form input {
+    padding: 12px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+.subscribe-button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--dark-bg);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 165, 255, 0.4);
+    animation: glowing 1.5s infinite;
+}
+
+.subscribe-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 165, 255, 0.6);
+}
