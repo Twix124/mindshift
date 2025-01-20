@@ -1,10 +1,23 @@
-body {
-    background-color: #1a1a1a;
-    color: #ffffff;
+/* Logo styling with purple glow */
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto;
+    display: block;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 20px var(--primary-color);
 }
 
+.logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px var(--secondary-color);
+}
+
+/* Guide page specific styles */
 .guide-container {
-    background: linear-gradient(to bottom, #1a1a1a, #2d1f3d);
+    background: linear-gradient(to bottom, var(--dark-bg), #2d1f3d);
     min-height: 100vh;
 }
 
@@ -14,17 +27,19 @@ body {
     padding: 40px 20px;
 }
 
-.guide-content h1 {
-    color: #d4a5ff;
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+.logo-small {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 15px var(--primary-color);
 }
 
-.guide-content h2 {
-    color: #b38bff;
-    font-size: 2em;
-    margin: 40px 0 20px;
+.logo-small:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--secondary-color);
 }
 
 .guide-sections {
@@ -35,12 +50,13 @@ body {
     border: 1px solid rgba(212, 165, 255, 0.1);
 }
 
-.logo-small {
-    width: 80px;
-    margin: 20px;
-    transition: transform 0.3s ease;
+/* Enhanced button glow effect */
+#cta-button {
+    animation: glowing 1.5s infinite;
 }
 
-.logo-small:hover {
-    transform: scale(1.1);
+@keyframes glowing {
+    0% { box-shadow: 0 4px 15px rgba(212, 165, 255, 0.4); }
+    50% { box-shadow: 0 4px 25px rgba(212, 165, 255, 0.7); }
+    100% { box-shadow: 0 4px 15px rgba(212, 165, 255, 0.4); }
 }
