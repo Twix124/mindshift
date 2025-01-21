@@ -1,25 +1,43 @@
-document.getElementById("getStartedBtn").addEventListener("click", function() {
-    // Hide the original landing page content and show the new UI
-    document.querySelector("header").style.display = "none";
-    document.getElementById("emailSubscription").style.display = "none";
-    document.getElementById("content").style.display = "block";
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize smooth scroll
+    initSmoothScroll();
+    
+    // Add button click handler
+    initButtonHandler();
+    
+    // Add page load animation
+    initPageLoadAnimation();
 });
 
-// Category buttons to toggle between sections
-document.getElementById("articlesBtn").addEventListener("click", function() {
-    document.getElementById("articlesSection").style.display = "grid";
-    document.getElementById("resourcesSection").style.display = "none";
-    document.getElementById("storeSection").style.display = "none";
-});
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+}
 
-document.getElementById("resourcesBtn").addEventListener("click", function() {
-    document.getElementById("articlesSection").style.display = "none";
-    document.getElementById("resourcesSection").style.display = "grid";
-    document.getElementById("storeSection").style.display = "none";
-});
+function initButtonHandler() {
+    const ctaButton = document.getElementById('cta-button');
+    ctaButton.addEventListener('click', function() {
+        window.location.href = '/manifestation-guide.html';
+    });
+}
 
-document.getElementById("storeBtn").addEventListener("click", function() {
-    document.getElementById("articlesSection").style.display = "none";
-    document.getElementById("resourcesSection").style.display = "none";
-    document.getElementById("storeSection").style.display = "grid";
+function initPageLoadAnimation() {
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 1s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+}
+document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = this.querySelector('input[type="email"]').value;
+    // Here you would typically send the email to your backend service
+    alert('Thank you for subscribing! We\'ll be in touch soon.');
+    this.reset();
 });
