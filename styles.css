@@ -1,72 +1,129 @@
+/* General Dark and Purple Theme */
 body {
+    background-color: #121212;
+    color: white;
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background-color: #121212;
-    color: #ffffff;
+    padding: 0;
 }
 
 header {
-    text-align: center;
+    background-color: #1e1e1e;
     padding: 20px;
-    background: #1a1a1a;
+    text-align: center;
 }
 
-.nav-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+header .logo img {
+    width: 100px;
+    height: auto;
 }
 
-.glow-button {
+button {
+    background-color: #6a1b9a;
+    color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
-    box-shadow: 0 0 10px #ff9a9e, 0 0 20px #fad0c4;
+    border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-.glow-button.active {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #ff9a9e, 0 0 30px #fad0c4;
+button:hover {
+    background-color: #9c4dcc;
+    box-shadow: 0 0 10px rgba(156, 77, 204, 0.7);
 }
 
-.glow-button:hover {
-    transform: scale(1.05);
-}
-
-.content-section {
+#content {
     padding: 20px;
-    text-align: center;
 }
 
-.hidden {
-    display: none;
+#categories {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.category-btn {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    background-color: #9c4dcc;
+    box-shadow: 0 0 10px rgba(156, 77, 204, 0.7);
 }
 
 .tiles {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
+/* Purple Glowing Tile Styles */
 .tile {
-    background: #1a1a1a;
-    border: 1px solid #333;
+    background-color: #3e1f6d;
     padding: 20px;
-    border-radius: 15px;
-    width: 250px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(156, 77, 204, 0.5);
+    transition: all 0.3s ease;
 }
 
 .tile:hover {
-    background: #333;
-    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(156, 77, 204, 0.8);
+}
+
+.tile h2 {
+    color: #9c4dcc;
+}
+
+.tile button {
+    background-color: #9c4dcc;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tile button:hover {
+    background-color: #6a1b9a;
+    box-shadow: 0 0 10px rgba(156, 77, 204, 0.7);
+}
+
+/* Email Subscription Section */
+#emailSubscription {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#emailSubscription form input {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #9c4dcc;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+#emailSubscription form button {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#emailSubscription form button:hover {
+    background-color: #9c4dcc;
+    box-shadow: 0 0 10px rgba(156, 77, 204, 0.7);
 }
