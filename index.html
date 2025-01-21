@@ -5,57 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindShift</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Original Landing Page Content -->
     <header>
-        <div class="nav-buttons">
-            <button id="articles-btn" class="glow-button active">Articles</button>
-            <button id="resources-btn" class="glow-button">Resources</button>
-            <button id="store-btn" class="glow-button">Store</button>
+        <div class="logo">
+            <img src="logo.png" alt="MindShift Logo">
         </div>
+        <h1>Welcome to MindShift</h1>
+        <p>Your journey to a better you starts here.</p>
+        <button id="getStartedBtn">Get Started</button>
     </header>
-    <main>
-        <!-- Default Articles Section -->
-        <section id="articles-section" class="content-section">
-            <h1>Articles</h1>
-            <div class="tiles">
-                <div class="tile" onclick="location.href='product-reviews.html';">
-                    <h2>Product Reviews</h2>
-                    <p>Explore detailed reviews of the latest products.</p>
-                </div>
-                <div class="tile" onclick="location.href='tips-techniques.html';">
-                    <h2>Tips and Techniques</h2>
-                    <p>Learn new methods to enhance your mindset.</p>
-                </div>
-                <div class="tile" onclick="location.href='motivation.html';">
-                    <h2>Motivation</h2>
-                    <p>Get inspired with motivational content.</p>
-                </div>
+
+    <!-- Email Subscription Section (Original) -->
+    <section id="emailSubscription">
+        <h2>Subscribe to Our Newsletter</h2>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Hidden Content that will be displayed after clicking Get Started -->
+    <main id="content" style="display: none;">
+        <section id="categories">
+            <button class="category-btn" id="articlesBtn">Articles</button>
+            <button class="category-btn" id="resourcesBtn">Resources</button>
+            <button class="category-btn" id="storeBtn">Store</button>
+        </section>
+
+        <!-- Articles Section -->
+        <section id="articlesSection" class="tiles">
+            <div class="tile">
+                <h2>Visualization Techniques</h2>
+                <p>Learn how to use visualization to achieve your goals and stay focused.</p>
+                <button onclick="location.href='product-reviews.html';">Read More</button>
+            </div>
+            <div class="tile">
+                <h2>Time Management Hacks</h2>
+                <p>Practical tips to organize your day and maximize productivity.</p>
+                <button onclick="location.href='tips-techniques.html';">Read More</button>
+            </div>
+            <div class="tile">
+                <h2>Breathing Exercises</h2>
+                <p>Simple breathing techniques to reduce stress and improve focus.</p>
+                <button onclick="location.href='motivation.html';">Read More</button>
             </div>
         </section>
 
-        <!-- Resources Section -->
-        <section id="resources-section" class="content-section hidden">
-            <h1>Resources</h1>
-            <div class="tiles">
-                <div class="tile">
-                    <h2>Resource 1</h2>
-                    <p>Description of Resource 1</p>
-                </div>
-                <div class="tile">
-                    <h2>Resource 2</h2>
-                    <p>Description of Resource 2</p>
-                </div>
+        <!-- Resources Section (Placeholder) -->
+        <section id="resourcesSection" class="tiles" style="display: none;">
+            <div class="tile">
+                <h2>Resource 1</h2>
+                <p>Useful resource for personal growth.</p>
+                <button onclick="location.href='resource1.html';">Explore</button>
+            </div>
+            <div class="tile">
+                <h2>Resource 2</h2>
+                <p>Helpful guide for improving your mindset.</p>
+                <button onclick="location.href='resource2.html';">Explore</button>
             </div>
         </section>
 
-        <!-- Store Section -->
-        <section id="store-section" class="content-section hidden">
-            <h1>Store</h1>
-            <p>Coming soon: Explore our premium products and guides!</p>
+        <!-- Store Section (Placeholder) -->
+        <section id="storeSection" class="tiles" style="display: none;">
+            <div class="tile">
+                <h2>MindShift Product</h2>
+                <p>Buy our exclusive MindShift tools to help you grow.</p>
+                <button onclick="location.href='store.html';">Shop Now</button>
+            </div>
         </section>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
