@@ -1,12 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize smooth scroll
     initSmoothScroll();
-    
-    // Add button click handler
     initButtonHandler();
-    
-    // Add page load animation
     initPageLoadAnimation();
+    initNavButtons();
 });
 
 function initSmoothScroll() {
@@ -22,9 +18,11 @@ function initSmoothScroll() {
 
 function initButtonHandler() {
     const ctaButton = document.getElementById('cta-button');
-    ctaButton.addEventListener('click', function() {
-        window.location.href = '/manifestation-guide.html';
-    });
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function() {
+            window.location.href = 'main-content.html';
+        });
+    }
 }
 
 function initPageLoadAnimation() {
@@ -34,10 +32,39 @@ function initPageLoadAnimation() {
         document.body.style.opacity = '1';
     }, 100);
 }
-document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = this.querySelector('input[type="email"]').value;
-    // Here you would typically send the email to your backend service
-    alert('Thank you for subscribing! We\'ll be in touch soon.');
-    this.reset();
-});
+
+function initNavButtons() {
+    const buttons = document.querySelectorAll('.nav-button');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    buttons.forEach(button => {
+        const buttonPage = button.getAttribute('href').split('/').pop();
+        
+        // Set active state based on current page
+        if (buttonPage === currentPage) {
+            button.classList.add('active');
+        }
+
+        // Add click event to handle navigation and active state
+        button.addEventListener('click', function(e) {
+            // Remove active class from all buttons
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+        });
+    });
+}
+
+// Newsletter form submission
+const newsletterForm = document.getElementById('newsletter-form');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = this.querySelector('input[type="email"]').value;
+        alert('Thank you for subscribing! We\'ll be in touch soon.');
+        this.reset();
+    });
+}
