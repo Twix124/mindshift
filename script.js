@@ -1,43 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize smooth scroll
-    initSmoothScroll();
-    
-    // Add button click handler
-    initButtonHandler();
-    
-    // Add page load animation
-    initPageLoadAnimation();
-});
+document.querySelectorAll('.glow-button').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('.content-section').forEach(section => section.classList.add('hidden'));
+        document.querySelectorAll('.glow-button').forEach(btn => btn.classList.remove('active'));
 
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+        button.classList.add('active');
+        const sectionId = button.id.replace('-btn', '-section');
+        document.getElementById(sectionId).classList.remove('hidden');
     });
-}
-
-function initButtonHandler() {
-    const ctaButton = document.getElementById('cta-button');
-    ctaButton.addEventListener('click', function() {
-        window.location.href = '/manifestation-guide.html';
-    });
-}
-
-function initPageLoadAnimation() {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 1s ease';
-        document.body.style.opacity = '1';
-    }, 100);
-}
-document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = this.querySelector('input[type="email"]').value;
-    // Here you would typically send the email to your backend service
-    alert('Thank you for subscribing! We\'ll be in touch soon.');
-    this.reset();
 });
